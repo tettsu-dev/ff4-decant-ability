@@ -8,20 +8,20 @@ interface Charactor {
   exclusiveAbilities: string[];
 }
 
-export interface StatusLabel {
+interface StatusLabel {
   key: StatusKey;
   label: string;
   color: string;
 }
 
 export const StatusLabels: StatusLabel[] = [
-  { key: 'hp',  label: 'HP',    color: '#ff6b6b' },
-  { key: 'mp',  label: 'MP',    color: '#7eb8ff' },
-  { key: 'str', label: '力',    color: '#ff9f43' },
+  { key: 'hp', label: 'HP', color: '#ff6b6b' },
+  { key: 'mp', label: 'MP', color: '#7eb8ff' },
+  { key: 'str', label: '力', color: '#ff9f43' },
   { key: 'spd', label: '素早さ', color: '#ffd32a' },
-  { key: 'sta', label: '体力',   color: '#44bd32' },
-  { key: 'int', label: '知性',   color: '#00d2d3' },
-  { key: 'spr', label: '精神',   color: '#e84393' },
+  { key: 'sta', label: '体力', color: '#44bd32' },
+  { key: 'int', label: '知性', color: '#00d2d3' },
+  { key: 'spr', label: '精神', color: '#e84393' },
 ];
 
 export const Charactors: Charactor[] = [

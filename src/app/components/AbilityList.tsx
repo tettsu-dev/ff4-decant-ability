@@ -2,22 +2,13 @@
 'use client';
 
 import { Abilities } from '../../assets/Abilities';
+import { StatusLabels } from '../../assets/Charactors';
 
 interface StatusLabel {
   key: string;
   label: string;
   color: string;
 }
-
-const StatusLabels: StatusLabel[] = [
-  { key: 'hp',  label: 'HP',    color: '#ff6b6b' },
-  { key: 'mp',  label: 'MP',    color: '#7eb8ff' },
-  { key: 'str', label: '力',    color: '#ff9f43' },
-  { key: 'spd', label: '素早さ', color: '#ffd32a' },
-  { key: 'sta', label: '体力',   color: '#44bd32' },
-  { key: 'int', label: '知性',   color: '#00d2d3' },
-  { key: 'spr', label: '精神',   color: '#e84393' },
-];
 
 // 指定キャラクターが装備可能なアビリティ一覧を返却する
 function getEquipableAbilities(charactorId: string) {
