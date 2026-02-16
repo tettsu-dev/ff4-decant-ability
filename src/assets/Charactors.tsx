@@ -1,8 +1,8 @@
-export type CharactorKey = 'cecil' | 'kain' | 'rosa' | 'rydia' | 'edge';
+export type CharactorId = 'cecil' | 'kain' | 'rosa' | 'rydia' | 'edge';
 export type StatusKey = 'hp' | 'mp' | 'str' | 'spd' | 'sta' | 'int' | 'spr';
 
 interface Charactor {
-  id: CharactorKey;
+  id: CharactorId;
   name: string;
   lv70: Record<StatusKey, number>;
   exclusiveAbilities: string[];

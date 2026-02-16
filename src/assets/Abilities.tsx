@@ -70,3 +70,16 @@ export const Abilities: Ability[] = [
   { name: 'ぬすむ', type: '専用', hp: 0, mp: 0, str: 0, spd: 1, sta: 0, int: 0, spr: 1, exclusiveFor: ['edge'] },
   { name: 'ねらう', type: '専用', hp: 0, mp: 0, str: 0, spd: 1, sta: 0, int: 0, spr: 0, exclusiveFor: ['rosa'] },
 ];
+
+// 指定キャラクターが装備可能なアビリティ一覧を返却する
+export function getEquipableAbilities(charactorId: string) {
+  return Abilities.filter(ability => {
+    if (ability.type === 'デカント' || ability.type === '共通') {
+      // デカントアビリティと共通アビリティは全キャラ装備可能
+      return true;
+    } else if (ability.type === '専用') {
+      // 専用アビリティは対象キャラのみ装備可能
+      return ability.exclusiveFor?.includes(charactorId) ?? false;
+    }
+  });
+}

@@ -1,7 +1,7 @@
 // すべてのアビリティを表示するコンポーネント
 'use client';
 
-import { Abilities } from '../../assets/Abilities';
+import { getEquipableAbilities } from '../../assets/Abilities';
 import { StatusLabels } from '../../assets/Charactors';
 
 interface StatusLabel {
@@ -10,22 +10,10 @@ interface StatusLabel {
   color: string;
 }
 
-// 指定キャラクターが装備可能なアビリティ一覧を返却する
-function getEquipableAbilities(charactorId: string) {
-  return Abilities.filter(ability => {
-    if (ability.type === 'デカント' || ability.type === '共通') {
-      // デカントアビリティと共通アビリティは全キャラ装備可能
-      return true;
-    } else if (ability.type === '専用') {
-      // 専用アビリティは対象キャラのみ装備可能
-      return ability.exclusiveFor?.includes(charactorId) ?? false;
-    }
-  });
-}
-
 // 指定キャラクターが装備可能なアビリティ一覧を表示する
 export default function AbilityList({ charactorId }: { charactorId: string }) {
 
+  // キャラクターが装備可能なアビリティを取得
   const equipableAbilities = getEquipableAbilities(charactorId);
 
   return (
